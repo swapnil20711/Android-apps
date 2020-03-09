@@ -17,7 +17,10 @@
             android:textSize="36sp"
             android:textColor="#00796B"/>
 
-        <include layout="@layout/content_main" />
+        <include
+            layout="@layout/content_main"
+            android:layout_width="430dp"
+            android:layout_height="154dp" />
     </RelativeLayout>
 
     <com.google.android.material.appbar.AppBarLayout
