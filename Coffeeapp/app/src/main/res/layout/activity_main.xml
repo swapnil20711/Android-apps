@@ -48,12 +48,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+
             <Button
-                android:id="@+id/plus_coffee"
+                android:id="@+id/minus_coffee"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:onClick="PlusCoffee"
-                android:text="+" />
+                android:onClick="MinusCoffee"
+                android:padding="16dp"
+                android:text="-" />
 
             <TextView
                 android:id="@+id/show_count"
@@ -64,14 +66,12 @@
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
-
             <Button
-                android:id="@+id/minus_coffee"
+                android:id="@+id/plus_coffee"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:onClick="MinusCoffee"
-                android:padding="16dp"
-                android:text="-" />
+                android:onClick="PlusCoffee"
+                android:text="+" />
         </LinearLayout>
 
         <TextView
