@@ -11,8 +11,8 @@ import android.widget.Toast;
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends AppCompatActivity {
-    private int mCount=0;
-    private int coffeePrice=35;
+    private int mCount = 0;
+    private int coffeePrice = 35;
     private double cp;
     private TextView mShowCount;
     private TextView showCP;
@@ -21,18 +21,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mShowCount=(TextView)findViewById(R.id.show_count);
-        showCP=(TextView)findViewById(R.id.price_text_view);
+        mShowCount = (TextView) findViewById(R.id.show_count);
+        showCP = (TextView) findViewById(R.id.price_text_view);
     }
 
     /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        cp=coffeePrice*mCount;
-        if(showCP!=null)
-        {
-            showCP.setText("$"+Double.toString(cp));
+        cp = coffeePrice * mCount;
+        if (showCP != null) {
+            showCP.setText("$" + Double.toString(cp));
         }
 
     }
@@ -47,16 +46,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void PlusCoffee(View view) {
         ++mCount;
-        if(mShowCount!=null)
-        {
+        if (mShowCount != null) {
             mShowCount.setText(Integer.toString(mCount));
         }
     }
 
     public void MinusCoffee(View view) {
         --mCount;
-        if(mShowCount!=null)
-        {
+        if (mShowCount != null) {
             mShowCount.setText(Integer.toString(mCount));
         }
     }
