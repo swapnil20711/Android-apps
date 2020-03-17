@@ -12,7 +12,7 @@ import android.widget.Toast;
  */
 public class MainActivity extends AppCompatActivity {
     private int mCount = 0;
-    private int coffeePrice = 35;
+    private int coffeePrice = 5;
     private double cp;
     private TextView mShowCount;
     private TextView showCP;
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
         cp = coffeePrice * mCount;
         if (showCP != null) {
-            showCP.setText("$" + Double.toString(cp));
+            showCP.setText("Amount due ₹ " + Double.toString(cp));
         }
 
     }
