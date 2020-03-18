@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mShowCount = (TextView) findViewById(R.id.show_count);
         showCP = (TextView) findViewById(R.id.price_text_view);
+
     }
 
     /**
@@ -46,15 +47,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void PlusCoffee(View view) {
         ++mCount;
-        if (mShowCount != null) {
+        if (mCount>=0) {
             mShowCount.setText(Integer.toString(mCount));
         }
     }
 
     public void MinusCoffee(View view) {
         --mCount;
-        if (mShowCount != null) {
+        if (mCount>=0) {
             mShowCount.setText(Integer.toString(mCount));
+        }
+        else
+        {   mCount=0;
+            mShowCount.setText(Integer.toString((mCount)));
+            Toast toast=Toast.makeText(this,"You cannot have negative quantity of coffee",Toast.LENGTH_SHORT);
+            toast.show();
         }
     }
 }
