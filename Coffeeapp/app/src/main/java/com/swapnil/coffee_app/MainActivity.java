@@ -31,7 +31,11 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         cp = coffeePrice * mCount;
-        if (showCP != null) {
+        if (cp ==0) {
+            showCP.setText("₹ 0");
+        }
+        else
+        {
             showCP.setText("Amount due ₹ " + Double.toString(cp));
         }
 
