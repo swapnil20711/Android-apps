@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView scoreb;
     private int mScore = 0;
     private int mScoreB = 0;
+    private int diff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,11 +65,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void btn_cmp(View view) {
         if (mScore > mScoreB) {
-            Toast.makeText(this, "Team A won the match", Toast.LENGTH_SHORT).show();
+            diff = mScore - mScoreB;
+            Toast.makeText(this, "Team A won the match by " + diff + " points", Toast.LENGTH_SHORT).show();
         } else if (mScoreB == mScore) {
             Toast.makeText(this, "Math tied", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Team B won the match", Toast.LENGTH_SHORT).show();
+            diff = mScoreB - mScore;
+            Toast.makeText(this, "Team B won the match by " + diff + " points", Toast.LENGTH_SHORT).show();
         }
         mScoreB = 0;
         score.setText(Integer.toString(mScoreB));
