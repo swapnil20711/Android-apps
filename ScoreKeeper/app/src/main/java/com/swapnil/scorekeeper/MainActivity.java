@@ -23,19 +23,27 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void displayScore(int mScore) {
+        score.setText(Integer.toString(mScore));
+    }
+
+    public void displayScoreB(int mScoreB) {
+        scoreb.setText(Integer.toString(mScoreB));
+    }
+
     public void btn_2(View view) {
         mScore += 2;
-        score.setText(Integer.toString(mScore));
+        displayScore(mScore);
     }
 
     public void btn_3(View view) {
         mScore += 3;
-        score.setText(Integer.toString(mScore));
+        displayScore(mScore);
     }
 
     public void btn_free(View view) {
         mScore += 1;
-        score.setText(Integer.toString(mScore));
+        displayScore(mScore);
     }
 
     public void btn_reset(View view) {
@@ -50,12 +58,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void btn_3B(View view) {
         mScoreB += 3;
-        scoreb.setText(Integer.toString(mScoreB));
+        displayScoreB(mScoreB);
     }
 
     public void btn_2B(View view) {
         mScoreB += 2;
-        scoreb.setText(Integer.toString(mScoreB));
+        displayScoreB(mScoreB);
     }
 
     public void btn_resetB(View view) {
