@@ -3,7 +3,9 @@ package com.swapnil.coffee_app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,33 +32,41 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        CheckBox cream = (CheckBox) findViewById(R.id.c1);
         cp = coffeePrice * mCount;
-        if (cp ==0) {
-            showCP.setText("₹ 0");
+        boolean hasCream = cream.isChecked();
+        if (hasCream) {
+            if (cp == 0) {
+                showCP.setText("₹ 0");
+            } else {
+                showCP.setText("Name:Swapnil bhojwani\n" + "Whipped cream added to your coffee\n" + "Quantity:" + mCount + "\nAmount due ₹ " + Double.toString(cp + 5*mCount) + "\nThank you");
+            }
+        } else {
+            if (cp == 0) {
+                showCP.setText("₹ 0");
+            } else {
+                showCP.setText("Name:Swapnil bhojwani\n" + "Can you add some Whipped cream?\n" + "Quantity:" + mCount + "\nAmount due ₹ " + Double.toString(cp) + "\nThank you");
+            }
         }
-        else
-        {
-            showCP.setText("Amount due ₹ " + Double.toString(cp));
-        }
+
 
     }
 
     public void PlusCoffee(View view) {
         ++mCount;
-        if (mCount>=0) {
+        if (mCount >= 0) {
             mShowCount.setText(Integer.toString(mCount));
         }
     }
 
     public void MinusCoffee(View view) {
         --mCount;
-        if (mCount>=0) {
+        if (mCount >= 0) {
             mShowCount.setText(Integer.toString(mCount));
-        }
-        else
-        {   mCount=0;
+        } else {
+            mCount = 0;
             mShowCount.setText(Integer.toString((mCount)));
-            Toast toast=Toast.makeText(this,"You cannot have negative quantity of coffee",Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, "You cannot have negative quantity of coffee", Toast.LENGTH_SHORT);
             toast.show();
         }
     }
