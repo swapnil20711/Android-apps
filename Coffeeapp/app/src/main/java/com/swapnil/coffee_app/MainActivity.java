@@ -2,6 +2,8 @@ package com.swapnil.coffee_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private double cp;
     private TextView mShowCount;
     private TextView showCP;
+    private String order1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,16 +42,36 @@ public class MainActivity extends AppCompatActivity {
         cp = coffeePrice * mCount;
         boolean hasCream = cream.isChecked();
         if (hasCream) {
+            String order = "Name:" + name + "\n" + "Whipped cream added to your coffee\n" + "Quantity:" + mCount + "\nAmount due ₹ " + Double.toString(cp + 5 * mCount) + "\nThank you";
             if (cp == 0) {
                 showCP.setText("₹ 0");
             } else {
-                showCP.setText("Name:"+name+"\n" + "Whipped cream added to your coffee\n" + "Quantity:" + mCount + "\nAmount due ₹ " + Double.toString(cp + 5 * mCount) + "\nThank you");
+                showCP.setText(order);
+
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setData(Uri.parse("mailto:"));
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Ordering coffee for " + name);
+                intent.putExtra(Intent.EXTRA_TEXT, order);
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(Intent.createChooser(intent, "Send Email"));
+                }
             }
         } else {
+            String order1 = "Name:" + name + "\n" + "Can you add some Whipped cream?\n" + "Quantity:" + mCount + "\nAmount due ₹ " + Double.toString(cp) + "\nThank you";
             if (cp == 0) {
                 showCP.setText("₹ 0");
             } else {
-                showCP.setText("Name:"+name+"\n" + "Can you add some Whipped cream?\n" + "Quantity:" + mCount + "\nAmount due ₹ " + Double.toString(cp) + "\nThank you");
+                showCP.setText(order1);
+
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.setData(Uri.parse("mailto:"));
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Ordering coffee for " + name);
+                intent.putExtra(Intent.EXTRA_TEXT, order1);
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(Intent.createChooser(intent, "Send Email"));
+                }
             }
         }
 
