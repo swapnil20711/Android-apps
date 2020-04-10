@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
                 showCP.setText("₹ 0");
             } else {
                 showCP.setText(order);
-
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setData(Uri.parse("mailto:"));
                 intent.setType("text/plain");

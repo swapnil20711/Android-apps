@@ -49,11 +49,7 @@
                 android:layout_marginBottom="8dp"
                 android:padding="8dp"
                 android:text="Toppings"
-                android:textAllCaps="true"
-                android:textColor="#4E342E "
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:fontFamily="@font/baloo_paaji" />
+                style="@style/Headings" />
 
             <CheckBox
                 android:id="@+id/c1"
@@ -71,11 +67,7 @@
                 android:layout_marginBottom="8dp"
                 android:padding="8dp"
                 android:text="Quantity"
-                android:textAllCaps="true"
-                android:textColor="#4E342E "
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:fontFamily="@font/baloo_paaji" />
+                style="@style/Headings" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -125,10 +117,7 @@
                     android:layout_marginLeft="6dp"
                     android:padding="8dp"
                     android:text="PRICE"
-                    android:textColor="#4E342E "
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:fontFamily="@font/baloo_paaji" />
+                    style="@style/Headings" />
 
                 <ImageView
                     android:id="@+id/imageView"
