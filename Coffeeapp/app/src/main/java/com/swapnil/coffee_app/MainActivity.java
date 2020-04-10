@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        EditText edit = (EditText) findViewById(R.id.name_field);
+        String name = edit.getText().toString();
         CheckBox cream = (CheckBox) findViewById(R.id.c1);
         cp = coffeePrice * mCount;
         boolean hasCream = cream.isChecked();
@@ -39,13 +42,13 @@ public class MainActivity extends AppCompatActivity {
             if (cp == 0) {
                 showCP.setText("₹ 0");
             } else {
-                showCP.setText("Name:Swapnil bhojwani\n" + "Whipped cream added to your coffee\n" + "Quantity:" + mCount + "\nAmount due ₹ " + Double.toString(cp + 5*mCount) + "\nThank you");
+                showCP.setText("Name:"+name+"\n" + "Whipped cream added to your coffee\n" + "Quantity:" + mCount + "\nAmount due ₹ " + Double.toString(cp + 5 * mCount) + "\nThank you");
             }
         } else {
             if (cp == 0) {
                 showCP.setText("₹ 0");
             } else {
-                showCP.setText("Name:Swapnil bhojwani\n" + "Can you add some Whipped cream?\n" + "Quantity:" + mCount + "\nAmount due ₹ " + Double.toString(cp) + "\nThank you");
+                showCP.setText("Name:"+name+"\n" + "Can you add some Whipped cream?\n" + "Quantity:" + mCount + "\nAmount due ₹ " + Double.toString(cp) + "\nThank you");
             }
         }
 
