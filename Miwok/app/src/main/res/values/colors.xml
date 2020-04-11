@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <!--    Background color of numbers activity-->
+    <color name="category_numbers">#FD8E09</color>
+    <!--    Background color of family activity-->
+    <color name="category_family">#004D40</color>
+    <!--    Text color of all activity-->
+    <color name="text_color">#FFFFFF</color>
+    <!--    Background color of colors activity-->
+    <color name="category_colors">#311B92</color>
+    <!-- Background color for app -->
+    <color name="tan_background">#FFF7DA</color>
+    <!--    Background color of phrases activity-->
+    <color name="category_phrases">#01579B</color>
+</resources>
