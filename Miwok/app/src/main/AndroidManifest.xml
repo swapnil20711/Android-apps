@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".FamilyActivity"
-            android:label="@string/category_family"></activity>
+            android:label="@string/category_family" />
         <activity
             android:name=".PhrasesActivity"
             android:label="@string/category_phrases" />
