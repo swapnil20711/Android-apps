@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -17,8 +19,11 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
+        LinearLayout RootView = (LinearLayout) findViewById(R.id.rootView);
         for (int i = 0; i < words.size(); i++) {
-            Log.v("NumbersActivity", words.get(i));
+            TextView display = new TextView(this);
+            display.setText(words.get(i));
+            RootView.addView(display);
         }
     }
 }
