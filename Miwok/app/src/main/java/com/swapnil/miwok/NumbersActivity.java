@@ -2,9 +2,12 @@ package com.swapnil.miwok;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ListActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.lang.reflect.Array;
@@ -19,11 +22,13 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
-        LinearLayout RootView = (LinearLayout) findViewById(R.id.rootView);
-        for (int i = 0; i < words.size(); i++) {
-            TextView display = new TextView(this);
-            display.setText(words.get(i));
-            RootView.addView(display);
-        }
+        ArrayAdapter<String> displayWords = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, words);
+        ListView list = (ListView) findViewById(R.id.list_item);
+        list.setAdapter(displayWords);
+
+//        for (int i = 0; i < words.size(); i++) {
+//            TextView display = new TextView(this);
+//            display.setText(words.get(i));
+//        }
     }
 }

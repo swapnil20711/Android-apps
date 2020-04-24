@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".FamilyActivity">
 
-    <LinearLayout
-        android:id="@+id/rootView"
+    <ListView
+        android:id="@+id/list_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp"></LinearLayout>
+        android:padding="16dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
