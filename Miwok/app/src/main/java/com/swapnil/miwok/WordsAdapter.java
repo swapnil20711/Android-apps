@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -30,8 +31,10 @@ public class WordsAdapter extends ArrayAdapter<Word> {
         }
         TextView miwok = (TextView) listItemView.findViewById(R.id.miwok_trans);
         miwok.setText(currentNumber.getMiwokTranslation());
-        TextView english = (TextView) listItemView.findViewById(R.id.english_trans);
-        english.setText(currentNumber.getDefaultTranslationTranslation());
+        TextView def = (TextView) listItemView.findViewById(R.id.default_trans);
+        def.setText(currentNumber.getDefaultTranslationTranslation());
+        ImageView iconView = (ImageView) listItemView.findViewById(R.id.image);
+        iconView.setImageResource(currentNumber.getImageId());
         return listItemView;
 
     }

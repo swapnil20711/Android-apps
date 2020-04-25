@@ -9,6 +9,7 @@
 
     <ImageView
         android:id="@+id/image"
+        android:src="@drawable/number_one"
         android:layout_width="88dp"
         android:layout_height="88dp" />
 
@@ -35,7 +36,7 @@
             tools:text="lutti" />
 
         <TextView
-            android:id="@+id/english_trans"
+            android:id="@+id/default_trans"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"

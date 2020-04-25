@@ -6,9 +6,14 @@ public class Word {
     private String mDefaultTranslation;
     private int mImageId;
 
-    public Word(String DefaultTranslation, String MiwokTranslation) {
+    public Word(String DefaultTranslation, String MiwokTranslation, int Image) {
         mDefaultTranslation = DefaultTranslation;
         mMiwokTranslation = MiwokTranslation;
+        mImageId = Image;
+    }
+
+    public int getImageId() {
+        return mImageId;
     }
 
     public String getMiwokTranslation() {
