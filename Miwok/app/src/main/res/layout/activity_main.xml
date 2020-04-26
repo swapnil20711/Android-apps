@@ -17,42 +17,43 @@
             android:layout_width="match_parent"
             android:id="@+id/numbers"
             android:layout_height="65dp"
+            android:textSize="20sp"
             android:background="@color/category_numbers"
             android:onClick="openNumbersList"
             android:padding="16dp"
             android:text="@string/category_numbers"
             android:textColor="@color/text_color"
-            android:textSize="26sp" />
+            />
 
         <TextView
             android:layout_width="match_parent"
+            android:textSize="20sp"
             android:layout_height="65dp"
             android:background="@color/category_family"
             android:onClick="openFamilyList"
             android:padding="16dp"
             android:text="@string/category_family"
-            android:textColor="@color/text_color"
-            android:textSize="26sp" />
+            android:textColor="@color/text_color" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="65dp"
+            android:textSize="20sp"
             android:background="@color/category_colors"
             android:onClick="openColorsList"
             android:padding="16dp"
             android:text="@string/category_colors"
-            android:textColor="@color/text_color"
-            android:textSize="26sp" />
+            android:textColor="@color/text_color" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="65dp"
+            android:textSize="20sp"
             android:background="@color/category_phrases"
             android:onClick="openPhrasesList"
             android:padding="16dp"
             android:text="@string/category_phrases"
-            android:textColor="@color/text_color"
-            android:textSize="26sp" />
+            android:textColor="@color/text_color" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
