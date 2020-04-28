@@ -18,11 +18,11 @@
             android:id="@+id/numbers"
             android:layout_height="65dp"
             android:textSize="20sp"
-            android:background="@color/category_numbers"
+            android:background="?android:attr/selectableItemBackground"
             android:onClick="openNumbersList"
             android:padding="16dp"
             android:text="@string/category_numbers"
-            android:textColor="@color/text_color"
+            android:textColor="@android:color/black"
             />
 
         <TextView

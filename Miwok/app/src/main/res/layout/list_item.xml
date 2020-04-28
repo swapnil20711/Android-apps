@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Layout for a single list item -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="88dp"
@@ -35,6 +36,14 @@
             android:textColor="@android:color/white"
             android:textStyle="bold"
             tools:text="lutti" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/baseline_play_arrow_white_18dp"
+            android:layout_gravity="end"
+            android:layout_marginRight="16dp"/>
 
         <TextView
             android:id="@+id/default_trans"
@@ -46,6 +55,8 @@
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
             tools:text="one" />
+
+
     </LinearLayout>
 
     <View

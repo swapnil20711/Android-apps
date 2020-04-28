@@ -3,8 +3,10 @@ package com.swapnil.miwok;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ListActivity;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,6 +24,7 @@ import java.util.Arrays;
 public class NumbersActivity extends AppCompatActivity {
 
     MediaPlayer player;
+    AudioManager mAudioManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
