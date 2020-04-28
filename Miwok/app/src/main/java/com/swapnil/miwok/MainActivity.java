@@ -1,11 +1,12 @@
 package com.swapnil.miwok;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
+
+import com.google.android.material.tabs.TabLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,29 +14,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView num=findViewById(R.id.numbers);
-    }
 
+        @SuppressLint("WrongViewCast") ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
-    public void openNumbersList(View view) {
-        Intent Numbers = new Intent(this, NumbersActivity.class);
-        startActivity(Numbers);
+        // Create an adapter that knows which fragment should be shown on each page
+        CategoryAdapter adapter = new CategoryAdapter(this,getSupportFragmentManager());
 
+        // Set the adapter onto the view pager
+        viewPager.setAdapter(adapter);
 
-    }
-
-    public void openFamilyList(View view) {
-        Intent Family = new Intent(this, FamilyActivity.class);
-        startActivity(Family);
-    }
-
-    public void openColorsList(View view) {
-        Intent Color = new Intent(this, ColorsActivity.class);
-        startActivity(Color);
-    }
-
-    public void openPhrasesList(View view) {
-        Intent Phrase = new Intent(this, PhrasesActivity.class);
-        startActivity(Phrase);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
     }
 }
